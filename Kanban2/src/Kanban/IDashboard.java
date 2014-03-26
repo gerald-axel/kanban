@@ -1,3 +1,4 @@
+package Kanban;
 
 public interface IDashboard {
 

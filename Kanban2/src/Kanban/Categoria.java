@@ -1,3 +1,4 @@
+package Kanban;
 
 public class Categoria {
 	public String description;
