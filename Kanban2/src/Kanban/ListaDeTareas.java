@@ -1,26 +1,133 @@
-package Kanban;
 
-public class ListaDeTareas implements IDashboard{
-	private Tarea[] listaDeTareas;
-	
-	public boolean agregar(Tarea tarea)
-	{
-		return true;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+public class ListaDeTareas extends PizarraAbastracta implements List {
+
+	public ListaDeTareas() {
+		super();
+		System.out.println("Empezando lista de tareas");
 	}
-	public boolean borrar(Tarea tarea)
-	{
-		return true;
-	}
+
 	@Override
-	public boolean remover(Tarea tarea) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	public Tarea[] getListaDeTareas() {
-		return listaDeTareas;
-	}
-	public void setListaDeTareas(Tarea[] listaDeTareas) {
-		this.listaDeTareas = listaDeTareas;
+	public boolean add(Object e) {
+		return container.add(e);
 	}
 
+	@Override
+	public void add(int index, Object element) {
+		container.add(index, element);
+	}
+
+	@Override
+	public boolean addAll(Collection c) {
+		return container.addAll(c);
+	}
+
+	@Override
+	public boolean addAll(int index, Collection c) {
+		return container.addAll(index, c);
+	}
+
+	@Override
+	public void clear() {
+		container.clear();
+	}
+
+	@Override
+	public boolean contains(Object o) {
+		return container.contains(o);
+	}
+
+	@Override
+	public boolean containsAll(Collection c) {
+		return container.contains(c);
+	}
+
+	@Override
+	public Object get(int index) {
+		return container.get(index);
+	}
+
+	@Override
+	public int indexOf(Object o) {
+		return container.indexOf(o);
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return container.isEmpty();
+	}
+
+	@Override
+	public Iterator iterator() {
+		return container.iterator();
+	}
+
+	@Override
+	public int lastIndexOf(Object o) {
+		return container.lastIndexOf(o);
+	}
+
+	@Override
+	public ListIterator listIterator() {
+		return container.listIterator();
+	}
+
+	@Override
+	public ListIterator listIterator(int index) {
+		return container.listIterator(index);
+	}
+
+	@Override
+	public boolean remove(Object o) {
+		return container.remove(o);
+	}
+
+	@Override
+	public Object remove(int index) {
+		return container.remove(index);
+	}
+
+	@Override
+	public boolean removeAll(Collection c) {
+		return container.removeAll(c);
+	}
+
+	@Override
+	public boolean retainAll(Collection c) {
+		return container.retainAll(c);
+	}
+
+	@Override
+	public Object set(int index, Object element) {
+		return container.set(index, element);
+	}
+
+	@Override
+	public int size() {
+		return container.size();
+	}
+
+	@Override
+	public List subList(int fromIndex, int toIndex) {
+		return container.subList(fromIndex, toIndex);
+	}
+
+	@Override
+	public Object[] toArray() {
+		return container.toArray();
+	}
+
+	@Override
+	public Object[] toArray(Object[] a) {
+		return container.toArray(a);
+	}
+
+	@Override
+	public boolean remove(Tareas task) {
+		return container.remove(task);
+	}
 }

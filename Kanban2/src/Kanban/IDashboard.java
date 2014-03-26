@@ -1,7 +1,9 @@
-package Kanban;
 
 public interface IDashboard {
-	boolean agregar(Tarea tarea);
-	boolean remover(Tarea tarea);
 
+	public abstract boolean add(Tareas task);
+
+	boolean remove(Tareas task);
+
+	void clear();
 }

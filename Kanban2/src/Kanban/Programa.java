@@ -1,20 +1,19 @@
-package Kanban;
+
 
 public class Programa {
 
-	public static void main(String[] args) {
-		Tarea tarea = new Tarea();
-		
-		tarea.setDespcripcion("Completar el programa");
-		tarea.setEstado(Estado.DO_TO);
-		
-		//ListaDeTareas lista=new ListaDeTareas();
-		IDashboard lista = new ListaDeTareas();
-		if(lista.agregar(tarea))
-		{
-			System.out.println("Agregada");
+	public static void main(String[] args) throws Exception {
+            
+		Tareas task;
+                
+		IDashboard dashboard = new ListaDeTareas();
+                
+		for (int i = 0; i < 15; i++) {
+			task = new Tareas("Tareas " + i, Estado.DO_TO);
+			if (dashboard.add(task)) {
+				System.out.println("Agregar " + task.getTitle());
+			}
 		}
-
 	}
 
 }
