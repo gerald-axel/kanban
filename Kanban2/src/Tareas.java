@@ -7,7 +7,7 @@ public class Tareas {
 	private Estado estado;
 	private Categoria categoria;
 	private short priority;
-	private String Dueño;
+	private String Usuario;
 	private Date FechaDeEntrega;
 	private Date FechaDeCreacion;
 
@@ -74,11 +74,11 @@ public class Tareas {
 	}
 
 	public String getOwner() {
-		return Dueño;
+		return Usuario;
 	}
 
 	public void setOwner(String owner) {
-		this.Dueño = owner;
+		this.Usuario = owner;
 	}
 
 	public Date getDueDate() {
