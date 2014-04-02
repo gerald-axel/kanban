@@ -18,17 +18,27 @@ public class Tareas {
 	}
 
 	public Tareas(String title) {
-		this(title, Estado.BACKLOG);
+		this(title, Estado.BACKLOG, (short) 1);
+		System.out.println("Titulo");
+	}
+	
+	public Tareas(String title, short priority) {
+		this(title, Estado.BACKLOG, priority);
+		System.out.println("Titulo");
+	}
+	
+	public Tareas(String title, Estado state) {
+		this(title, Estado.BACKLOG,(short) 1);
 		System.out.println("Titulo");
 	}
 
-	public Tareas(String title, Estado state) {
+	public Tareas(String title, Estado state, short priority) {
 		super();
 		System.out.println("Estado");
 		
 		this.titulo = title;
 		FechaDeCreacion = new Date();
-		priority = 1;
+		this.priority = priority;
 		this.estado = state;
 	}
 
@@ -109,6 +119,15 @@ public class Tareas {
 			}
 		}
 		return false;
+	}
+	
+	public boolean save(){
+		try{
+			Thread.sleep(1*1000);
+		}catch(InterruptedException e ){
+			e.printStackTrace();
+		}
+		return true;
 	}
 
 }

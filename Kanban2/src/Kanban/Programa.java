@@ -1,7 +1,10 @@
 package Kanban;
 
+import java.util.Date;
+
 
 public class Programa {
+	public static IDashboard dashboard=new ListaDeTareas();
 
 	public static void main(String[] args) throws Exception {
             
@@ -11,10 +14,11 @@ public class Programa {
                 
 		for (int i = 0; i < 15; i++) {
 			task = new Tareas("Tareas " + i, Estado.DO_TO);
-			if (dashboard.add(task)) {
-				System.out.println("Agregar " + task.getTitle());
+			if (task.save()) {
+				System.out.println("Saved " + task.getTitle());
 			}
 		}
+		System.out.println("End"+new Date() );
 	}
 
 }
