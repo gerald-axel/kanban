@@ -14,7 +14,7 @@ public abstract class PizarraAbastracta implements IDashboard {
 	}
 
 	@Override
-	public boolean add(Tareas task) {
+	public boolean add(Tarea task) {
 		return container.add(task);
 	}
 

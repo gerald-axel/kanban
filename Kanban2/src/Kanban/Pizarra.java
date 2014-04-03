@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class Pizarra implements IDashboard {
 
 	private int capacid;
-	private transient Tareas[] tareas;
+	private transient Tarea[] tareas;
 	private transient int cantidad = 0;
 
 	
-	public boolean add(Tareas task) {
+	public boolean add(Tarea task) {
 		VerificarCapacidad(capacid + 1);
 		tareas[capacid++] = task;
 		return true;
@@ -27,7 +27,7 @@ public class Pizarra implements IDashboard {
 		}
 	}
 
-	public boolean remove(Tareas task) {
+	public boolean remove(Tarea task) {
 		if (task == null) {
 			for (int index = 0; index < capacid; index++)
 				if (tareas[index] == null) {
@@ -68,7 +68,7 @@ public class Pizarra implements IDashboard {
 		if (initialCapacity < 0)
 			throw new IllegalArgumentException("Illegal Capacity: "
 					+ initialCapacity);
-		this.tareas = new Tareas[initialCapacity];
+		this.tareas = new Tarea[initialCapacity];
 	}
 
 	public Pizarra() {

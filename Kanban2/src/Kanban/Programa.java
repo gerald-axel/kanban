@@ -2,23 +2,27 @@ package Kanban;
 
 import java.util.Date;
 
-
 public class Programa {
-	public static IDashboard dashboard=new ListaDeTareas();
+
+	public static IDashboard dashboard = new ListaDeTareas();
 
 	public static void main(String[] args) throws Exception {
-            
-		Tareas task;
-                
-		IDashboard dashboard = new ListaDeTareas();
-                
+		System.out.println("Start " + new Date());
+
+		Thread thread;
+		User user;
 		for (int i = 0; i < 15; i++) {
-			task = new Tareas("Tareas " + i, Estado.DO_TO);
-			if (task.save()) {
-				System.out.println("Saved " + task.getTitle());
-			}
+			user = new User();
+			thread = new Thread(user);
+
+			thread.setName("Title " + i);
+			int priority = 1 + (int) (Math.random() * ((10 - 1) + 1));
+			thread.setPriority(priority);
+
+			thread.start();
 		}
-		System.out.println("End"+new Date() );
+
+		System.out.println("End " + new Date());
 	}
 
 }

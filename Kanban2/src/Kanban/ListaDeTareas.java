@@ -128,7 +128,7 @@ public class ListaDeTareas extends PizarraAbastracta implements List {
 	}
 
 	@Override
-	public boolean remove(Tareas task) {
+	public boolean remove(Tarea task) {
 		return container.remove(task);
 	}
 }

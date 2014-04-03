@@ -2,7 +2,7 @@ package Kanban;
 
 import java.util.Date;
 
-public class Tareas {
+public class Tarea {
 	private String titulo;
 	private String descripcion;
 	private Estado estado;
@@ -12,27 +12,27 @@ public class Tareas {
 	private Date FechaDeEntrega;
 	private Date FechaDeCreacion;
 
-	public Tareas() {
+	public Tarea() {
 		this("");
 		System.out.println("Empezando Tarea ");
 	}
 
-	public Tareas(String title) {
+	public Tarea(String title) {
 		this(title, Estado.BACKLOG, (short) 1);
 		System.out.println("Titulo");
 	}
 	
-	public Tareas(String title, short priority) {
+	public Tarea(String title, short priority) {
 		this(title, Estado.BACKLOG, priority);
 		System.out.println("Titulo");
 	}
 	
-	public Tareas(String title, Estado state) {
+	public Tarea(String title, Estado state) {
 		this(title, Estado.BACKLOG,(short) 1);
 		System.out.println("Titulo");
 	}
 
-	public Tareas(String title, Estado state, short priority) {
+	public Tarea(String title, Estado state, short priority) {
 		super();
 		System.out.println("Estado");
 		
@@ -114,8 +114,8 @@ public class Tareas {
 
 	public boolean equals(Object obj) {
 		if (obj != null) {
-			if (obj instanceof Tareas) {
-				return titulo.equals(((Tareas) obj).getTitle());
+			if (obj instanceof Tarea) {
+				return titulo.equals(((Tarea) obj).getTitle());
 			}
 		}
 		return false;
