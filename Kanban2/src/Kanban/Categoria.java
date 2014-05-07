@@ -1,4 +1,4 @@
-package Kanban;
+package src.Kanban;
 
 public class Categoria {
 	public String description;
